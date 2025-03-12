@@ -22,6 +22,30 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/context/AuthContext.jsx",
+    "src/app/libs/Axios-Interceptor.js",
+    "src/app/hooks/UseFetch.jsx",
+    "src/app/pages/MyCollege.jsx",
+    "src/app/pages/Home.jsx",
+    "src/app/pages/page.jsx",
+    "src/app/pages/Admission.jsx",
+    "src/app/pages/Auth/page.jsx",
+    "src/app/components/SearchBar.jsx",
+    "src/app/components/CollegeCard.jsx",
+    "src/app/pages/profile/page.jsx",
+    "src/app/pages/Auth/page.jsx",
+    "src/app/pages/Auth/page.jsx",
+    "src/app/components/Navbar.jsx",
+    "src/app/components/ReviewSection.jsx",
+    "src/app/components/AuthModal.jsx",
+    "src/app/components/Footer.jsx",
+    "src/app/components/ImageGallery.tsx",
+    "src/app/pages/404.jsx"
+  ],
   "exclude": ["node_modules"]
 }
