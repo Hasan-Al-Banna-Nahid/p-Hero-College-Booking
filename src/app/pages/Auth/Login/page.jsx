@@ -29,12 +29,6 @@ const Login = () => {
       typeof window !== "undefined" &&
         localStorage.setItem("user", JSON.stringify(userData));
 
-      await fetch("https://phero1.vercel.app/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(userData),
-      });
-
       Swal.fire("Success!", "Logged in with Google!", "success");
       router.push("/");
     } catch (error) {
@@ -54,12 +48,6 @@ const Login = () => {
 
       typeof window !== "undefined" &&
         localStorage.setItem("user", JSON.stringify(userData));
-
-      await fetch("https://phero1.vercel.app/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(userData),
-      });
 
       Swal.fire("Good job!", "Login Successful!", "success");
       router.push("/");

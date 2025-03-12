@@ -41,21 +41,8 @@ const Registration = () => {
       typeof window !== "undefined" &&
         localStorage.setItem("user", JSON.stringify(userData));
 
-      const response = await fetch(
-        "https://phero1.vercel.app/api/auth/register",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(userData),
-        }
-      );
-
-      if (response.ok) {
-        MySwal.fire("Success!", "Logged in with Google!", "success");
-        router.push("/");
-      } else {
-        throw new Error("Failed to register via Google.");
-      }
+      MySwal.fire("Success!", "Logged in with Google!", "success");
+      router.push("/");
     } catch (error) {
       setErrorMessage(error.message);
     }
@@ -84,22 +71,9 @@ const Registration = () => {
       typeof window !== "undefined" &&
         localStorage.setItem("user", JSON.stringify(userData));
 
-      const response = await fetch(
-        "https://phero1.vercel.app/api/auth/register",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(userData),
-        }
-      );
-
-      if (response.ok) {
-        MySwal.fire("Success!", "Your account has been created!", "success");
-        reset();
-        router.push("/");
-      } else {
-        throw new Error("Registration failed! Try again.");
-      }
+      MySwal.fire("Success!", "Your account has been created!", "success");
+      reset();
+      router.push("/");
     } catch (error) {
       setErrorMessage(error.message);
     }
