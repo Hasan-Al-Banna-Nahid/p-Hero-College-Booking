@@ -65,7 +65,6 @@ const Registration = () => {
       const userData = {
         name: data.name,
         email: data.email,
-        password: data.password, // Include password in the userData object
       };
 
       typeof window !== "undefined" &&
