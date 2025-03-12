@@ -2,7 +2,6 @@
 
 import Navbar from "@/app/components/Navbar";
 import ImageGallery from "@/app/components/ImageGallery";
-import Footer from "./components/Footer";
 import CollegeCard from "./components/CollegeCard";
 import ResearchPaper from "./components/ResearchPaper";
 import ReviewsSection from "./components/ReviewSection";
