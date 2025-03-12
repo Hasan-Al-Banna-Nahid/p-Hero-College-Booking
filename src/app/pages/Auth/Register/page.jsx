@@ -38,7 +38,8 @@ const Registration = () => {
         email: result.user.email,
       };
 
-      localStorage.setItem("user", JSON.stringify(userData));
+      typeof window !== "undefined" &&
+        localStorage.setItem("user", JSON.stringify(userData));
 
       const response = await fetch(
         "https://phero1.vercel.app/api/auth/register",
@@ -80,7 +81,8 @@ const Registration = () => {
         password: data.password, // Include password in the userData object
       };
 
-      localStorage.setItem("user", JSON.stringify(userData));
+      typeof window !== "undefined" &&
+        localStorage.setItem("user", JSON.stringify(userData));
 
       const response = await fetch(
         "https://phero1.vercel.app/api/auth/register",

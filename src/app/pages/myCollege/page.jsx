@@ -7,12 +7,17 @@ const MyCollege = () => {
 
   useEffect(() => {
     // Retrieve college applications from localStorage
-    const storedData = JSON.parse(localStorage.getItem("myCollege")) || [];
+    const storedData =
+      (typeof window !== "undefined" &&
+        JSON.parse(localStorage.getItem("myCollege"))) ||
+      [];
     setMyColleges(storedData);
 
     // Retrieve existing reviews from localStorage, initialize as empty object if none
     const storedReviews =
-      JSON.parse(localStorage.getItem("collegeReviews")) || {};
+      (typeof window !== "undefined" &&
+        JSON.parse(localStorage.getItem("collegeReviews"))) ||
+      {};
     setReviews(storedReviews);
   }, []);
 
@@ -26,7 +31,9 @@ const MyCollege = () => {
 
     // Retrieve current reviews from localStorage
     const storedReviews =
-      JSON.parse(localStorage.getItem("collegeReviews")) || {};
+      (typeof window !== "undefined" &&
+        JSON.parse(localStorage.getItem("collegeReviews"))) ||
+      {};
 
     // Check if there are already reviews for this university
     if (!storedReviews[universityName]) {
@@ -37,7 +44,8 @@ const MyCollege = () => {
     storedReviews[universityName].push(newReview);
 
     // Save the updated list of reviews back to localStorage
-    localStorage.setItem("collegeReviews", JSON.stringify(storedReviews));
+    typeof window !== "undefined" &&
+      localStorage.setItem("collegeReviews", JSON.stringify(storedReviews));
 
     // Update state with the new reviews
     setReviews(storedReviews);

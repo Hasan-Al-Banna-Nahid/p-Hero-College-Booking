@@ -23,7 +23,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     await logOut();
-    localStorage.removeItem("user");
+    typeof window !== "undefined" && localStorage.removeItem("user");
     typeof window !== "undefined" && window.location.reload();
     router.push("/pages/Auth/Login");
   };

@@ -17,8 +17,14 @@ const Profile = () => {
 
   // Load user and college data from localStorage
   useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem("user")) || {};
-    const storedCollege = JSON.parse(localStorage.getItem("myCollege")) || [];
+    const storedUser =
+      (typeof window !== "undefined" &&
+        JSON.parse(localStorage.getItem("user"))) ||
+      {};
+    const storedCollege =
+      (typeof window !== "undefined" &&
+        JSON.parse(localStorage.getItem("myCollege"))) ||
+      [];
 
     setUser(storedUser);
     setCollegeData(storedCollege);
@@ -40,7 +46,8 @@ const Profile = () => {
   // Save updated data to localStorage
   const handleSave = () => {
     const updatedUser = { ...user, ...formData };
-    localStorage.setItem("user", JSON.stringify(updatedUser));
+    typeof window !== "undefined" &&
+      localStorage.setItem("user", JSON.stringify(updatedUser));
 
     setUser(updatedUser);
     setIsEditing(false);

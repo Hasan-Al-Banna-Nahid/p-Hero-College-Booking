@@ -50,11 +50,13 @@ const AuthProvider = ({ children }) => {
             email: currentUser.email,
           })
           .then((res) => {
-            localStorage.setItem("access-token", res.data.token);
+            typeof window !== "undefined" &&
+              localStorage.setItem("access-token", res.data.token);
             setIsLoading(false);
           });
       } else {
-        localStorage.removeItem("access-token");
+        typeof window !== "undefined" &&
+          localStorage.removeItem("access-token");
         setIsLoading(false);
       }
     });

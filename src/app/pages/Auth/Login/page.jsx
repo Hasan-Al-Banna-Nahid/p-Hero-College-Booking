@@ -26,7 +26,8 @@ const Login = () => {
         email: result.user.email,
       };
 
-      localStorage.setItem("user", JSON.stringify(userData));
+      typeof window !== "undefined" &&
+        localStorage.setItem("user", JSON.stringify(userData));
 
       await fetch("https://phero1.vercel.app/api/auth/login", {
         method: "POST",
@@ -51,7 +52,8 @@ const Login = () => {
         email: result.user.email,
       };
 
-      localStorage.setItem("user", JSON.stringify(userData));
+      typeof window !== "undefined" &&
+        localStorage.setItem("user", JSON.stringify(userData));
 
       await fetch("https://phero1.vercel.app/api/auth/login", {
         method: "POST",

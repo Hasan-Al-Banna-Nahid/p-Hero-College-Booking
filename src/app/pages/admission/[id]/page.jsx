@@ -9,9 +9,13 @@ const Admission = () => {
     const data = Object.fromEntries(formData.entries());
 
     // Store the data in localStorage
-    const storedData = JSON.parse(localStorage.getItem("myCollege")) || [];
+    const storedData =
+      (typeof window !== "undefined" &&
+        JSON.parse(localStorage.getItem("myCollege"))) ||
+      [];
     storedData.push(data);
-    localStorage.setItem("myCollege", JSON.stringify(storedData));
+    typeof window !== "undefined" &&
+      localStorage.setItem("myCollege", JSON.stringify(storedData));
 
     alert("Admission data saved successfully!");
   };

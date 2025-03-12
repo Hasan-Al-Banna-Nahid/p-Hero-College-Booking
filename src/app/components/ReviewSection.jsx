@@ -40,7 +40,9 @@ const ReviewsSection = () => {
   useEffect(() => {
     // Fetch the reviews from localStorage and set them to state
     const storedReviews =
-      JSON.parse(localStorage.getItem("collegeReviews")) || {};
+      (typeof window !== "undefined" &&
+        JSON.parse(localStorage.getItem("collegeReviews"))) ||
+      {};
 
     // Transform the stored reviews into an array of review objects with college name
     const reviewsArray = Object.entries(storedReviews).flatMap(

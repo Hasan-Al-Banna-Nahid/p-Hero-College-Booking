@@ -7,7 +7,7 @@ import ResearchPaper from "./components/ResearchPaper";
 import ReviewsSection from "./components/ReviewSection";
 
 export default function Home() {
-  const user = localStorage.getItem("user");
+  const user = typeof window !== "undefined" && localStorage.getItem("user");
 
   return (
     <div>
