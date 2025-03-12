@@ -96,7 +96,7 @@ const Registration = () => {
       if (response.ok) {
         MySwal.fire("Success!", "Your account has been created!", "success");
         reset();
-        router.push("/pages/Auth/Login");
+        router.push("/");
       } else {
         throw new Error("Registration failed! Try again.");
       }
